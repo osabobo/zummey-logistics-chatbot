@@ -10,10 +10,12 @@ from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.vectorstores import FAISS
 from langchain_community.utilities import SerpAPIWrapper
 from langchain_groq import ChatGroq
-
+from pathlib import Path
 # --- Load Environment ---
 #load_dotenv()
-load_dotenv(dotenv_path="zummey-logistics-chatbot/.env")
+# Always load the .env file explicitly
+env_path = Path(__file__).parent / ".env"
+load_dotenv(dotenv_path=env_path)
 DB_FAISS_PATH = "vectorstoress/db_faiss"
 SCOPE = ["https://www.googleapis.com/auth/spreadsheets", "https://www.googleapis.com/auth/drive"]
 CREDS_FILE = os.getenv("CREDS_FILE_PATH")
