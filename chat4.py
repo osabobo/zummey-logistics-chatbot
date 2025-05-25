@@ -13,9 +13,7 @@ from langchain_groq import ChatGroq
 from pathlib import Path
 # --- Load Environment ---
 #load_dotenv()
-# Always load the .env file explicitly
-env_path = Path(__file__).parent / ".env"
-load_dotenv(dotenv_path=env_path)
+
 DB_FAISS_PATH = "vectorstoress/db_faiss"
 SCOPE = ["https://www.googleapis.com/auth/spreadsheets", "https://www.googleapis.com/auth/drive"]
 CREDS_FILE = os.getenv("CREDS_FILE_PATH")
@@ -36,7 +34,8 @@ Chatbot:""",
 
 # --- LLM & Vectorstore Setup ---
 def load_llm():
-    key = os.getenv("GROQ_API_KEY")
+    #key = os.getenv("GROQ_API_KEY")
+    key = st.secrets["GROQ_API_KEY"]
     if not key:
         raise ValueError("Missing GROQ_API_KEY in .env")
     return ChatGroq(model="llama-3.3-70b-versatile", groq_api_key=key, temperature=0.8)
@@ -111,7 +110,8 @@ def save_order(order_details):
 
 # --- Web Search Agent ---
 def create_web_agent():
-    serp_api_key = os.getenv("SERPAPI_API_KEY")
+    #serp_api_key = os.getenv("SERPAPI_API_KEY")
+    serp_api_key="51fcdf7c77accd51374ca5114339c4b1e985eb291dfb956e7c744a02c90d53dd"
     if not serp_api_key:
         raise ValueError("Missing SERPAPI_API_KEY in .env")
 
