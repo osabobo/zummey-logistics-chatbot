@@ -44,7 +44,7 @@ custom_prompt = get_custom_prompt()
 llm = load_llm()
 embeddings = HuggingFaceEmbeddings(
     model_name="sentence-transformers/all-MiniLM-L6-v2"
-    #model_kwargs={"device": "cpu"}
+    
 )
 vectorstore = FAISS.load_local(DB_FAISS_PATH, embeddings, allow_dangerous_deserialization=True)
 retriever = vectorstore.as_retriever(search_kwargs={"k": 2})
