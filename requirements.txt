@@ -1,10 +1,10 @@
 # Core Libraries
-streamlit
+streamlit==1.34.0
 python-dotenv
 
 # LangChain and NLP
-langchain
-langchain-community
+langchain==0.1.16
+langchain-community==0.0.36
 langchain-groq
 langchain_huggingface
 
@@ -20,5 +20,5 @@ oauth2client
 # Data Ingestion and Preprocessing
 gdown
 pypdf
-torch
-sentence-transformers
+torch==2.2.2
+sentence-transformers==2.6.1
