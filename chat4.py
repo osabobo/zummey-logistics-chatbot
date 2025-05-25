@@ -12,7 +12,8 @@ from langchain_community.utilities import SerpAPIWrapper
 from langchain_groq import ChatGroq
 
 # --- Load Environment ---
-load_dotenv()
+#load_dotenv()
+load_dotenv(dotenv_path="zummey-logistics-chatbot/.env")
 DB_FAISS_PATH = "vectorstoress/db_faiss"
 SCOPE = ["https://www.googleapis.com/auth/spreadsheets", "https://www.googleapis.com/auth/drive"]
 CREDS_FILE = os.getenv("CREDS_FILE_PATH")
