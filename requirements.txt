@@ -6,12 +6,12 @@ python-dotenv
 langchain==0.1.16
 langchain-community==0.0.36
 langchain-groq
-langchain_huggingface
+langchain-huggingface
 
 # Embeddings and Vector Database
-sentence-transformers
+sentence-transformers==2.6.1
 faiss-cpu
-huggingface_hub
+huggingface-hub
 
 # Google Sheets Integration
 gspread
@@ -21,4 +21,4 @@ oauth2client
 gdown
 pypdf
 torch==2.2.2
-sentence-transformers==2.6.1
+
